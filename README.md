@@ -31,7 +31,7 @@ Bu proje, Node.js (Express) tabanlı bir backend ve React (Vite) tabanlı bir fr
 ### 1. Projeyi Klonlayın
 ```bash
 git clone https://github.com/ylmazkanat/Depo-Takip-Uygulamasi.git
-cd depo-takip-uygulamasi
+cd Depo-Takip-Uygulamasi
 ```
 
 ### 2. Ortak Bağımlılıkları Yükleyin
@@ -39,10 +39,14 @@ cd depo-takip-uygulamasi
 npm run install-all
 ```
 
-### 3. Veritabanı Ayarları
+
+### 3. Ortam Değişkenleri ve Veritabanı Ayarları
 - `server/.env.example` dosyasını kopyalayarak `server/.env` dosyasını oluşturun.
 - `.env` dosyasındaki MySQL bağlantı ayarlarını (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT) kendi veritabanınıza göre güncelleyin.
 - Gerekirse bir MySQL veritabanı oluşturun.
+
+- `frontend/.env.example` dosyasını kopyalayarak `frontend/.env` dosyasını oluşturun.
+- Gerekirse API adresi ve diğer ayarları kendi ortamınıza göre güncelleyin (örn. VITE_API_BASE_URL, VITE_API_BASE_URL_PRODUCTION).
 
 ### 4. Veritabanı Kurulumu (Tablolar ve Örnek Veriler)
 ```bash
