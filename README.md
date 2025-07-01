@@ -1,5 +1,5 @@
 
-# Depo Takip Uygulaması (Fullstack)
+# Depo Takip Uygulaması 
 
 Bu proje, Node.js (Express) tabanlı bir backend ve React (Vite) tabanlı bir frontend ile geliştirilmiş, MySQL veritabanı kullanan bir depo/stok takip uygulamasıdır. Kullanıcı yönetimi, ürün ekleme, barkod ile ürün arama, resim yükleme ve admin paneli gibi özellikler sunar.
 
