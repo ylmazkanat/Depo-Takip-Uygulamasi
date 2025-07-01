@@ -1,0 +1,86 @@
+# Eğer CloudLinux + Passenger altyapısı kullanıyorsanız, aşağıdaki ayarları kendi sunucu yolunuza göre ekleyin:
+#
+# PassengerAppRoot "/sunucu/yolu/server"
+# PassengerBaseURI "/server"
+# PassengerNodejs "/sunucu/yolu/node/bin/node"
+# PassengerAppType node
+# PassengerStartupFile index.js
+#
+# Standart Node.js sunucularda bu ayarlara gerek yoktur.
+
+# Node.js Passenger temel ayarlar
+PassengerEnabled on
+PassengerAppType node
+PassengerStartupFile index.js
+
+# Tüm isteklere izin ver
+<RequireAll>
+    Require all granted
+</RequireAll>
+
+
+# CORS Headers (her domain için açık)
+<IfModule mod_headers.c>
+  Header always set Access-Control-Allow-Origin "*"
+  Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+  Header always set Access-Control-Allow-Headers "Content-Type, Authorization, Accept, X-Requested-With"
+  Header always set Access-Control-Allow-Credentials "true"
+  Header always set Access-Control-Max-Age "3600"
+</IfModule>
+
+# OPTIONS preflight handling
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ - [R=200,L]
+
+# API route'larına özel izin (her domain için açık)
+<LocationMatch "^/server/api/">
+    Require all granted
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, Accept"
+    Header always set Access-Control-Allow-Credentials "true"
+</LocationMatch>
+
+# Upload dizinine izin
+<Directory "uploads">
+    Options -Indexes
+    AllowOverride None
+    Require all granted
+    
+    # Sadece resim dosyalarına izin ver
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+        Require all granted
+    </FilesMatch>
+    
+    # Diğer dosya tiplerini reddet
+    <FilesMatch "\.(?!(jpg|jpeg|png|gif|webp)$)[^.]+$">
+        Require all denied
+    </FilesMatch>
+</Directory>
+
+# Güvenlik dosyaları
+<Files ".env">
+    Require all denied
+</Files>
+
+<Files "*.log">
+    Require all denied
+</Files>
+
+<Files "package*.json">
+    Require all denied
+</Files>
+
+# Dizin browsing'i devre dışı bırak
+Options -Indexes
+
+# Error pages
+ErrorDocument 404 '{"error": "Not Found", "status": 404}'
+ErrorDocument 500 '{"error": "Internal Server Error", "status": 500}'
+
+# Content-Type ayarları
+<IfModule mod_mime.c>
+    AddType application/json .json
+    AddType image/webp .webp
+</IfModule>

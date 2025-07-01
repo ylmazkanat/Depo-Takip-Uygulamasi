@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+.cache/
+
+# Ortak .env dosyaları
+server/.env
+!server/.env.example
+server/.htaccess
+!server/.htaccess.example
+frontend/.env
+!frontend/.env.example
+# Frontend .htaccess yüklensin
+!frontend/.htaccess
