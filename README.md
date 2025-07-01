@@ -100,44 +100,44 @@ Depo-Takip-Uygulaması/
 <details>
 <summary>Giriş Ekranı</summary>
 
-<img src="images/giris.png" alt="Giriş Ekranı" width="600" />
+<img src="images/giris.png" alt="Giriş Ekranı" style="width:100%;max-width:1000px;" />
 </details>
 
 
 <details>
 <summary>Panel Görünümü</summary>
 
-<img src="images/panel.png" alt="Panel Görseli" width="600" />
+<img src="images/panel.png" alt="Panel Görseli" style="width:100%;max-width:1000px;" />
 </details>
 <details>
 <summary>Ürün İç Sayfası</summary>
 
-<img src="images/urun-ic-sayfasi.png" alt="Ürün İç Sayfası" width="600" />
+<img src="images/urun-ic-sayfasi.png" alt="Ürün İç Sayfası" style="width:100%;max-width:1000px;" />
 </details>
 
 <details>
 <summary>Ürün Arama</summary>
 
-<img src="images/urun-arama.png" alt="Ürün Arama" width="600" />
+<img src="images/urun-arama.png" alt="Ürün Arama" style="width:100%;max-width:1000px;" />
 </details>
 
 <details>
 <summary>Ürün Ekleme</summary>
 
-<img src="images/urun-ekleme.png" alt="Ürün Ekleme" width="600" />
+<img src="images/urun-ekleme.png" alt="Ürün Ekleme" style="width:100%;max-width:1000px;" />
 </details>
 
 
 <details>
 <summary>Admin Kullanıcı Yönetimi</summary>
 
-<img src="images/admin-kullanici.png" alt="Admin Kullanıcı Yönetimi" width="600" />
+<img src="images/admin-kullanici.png" alt="Admin Kullanıcı Yönetimi" style="width:100%;max-width:1000px;" />
 </details>
 
 <details>
 <summary>Admin Raf Yönetimi</summary>
 
-<img src="images/admin-raf.png" alt="Admin Raf Yönetimi" width="600" />
+<img src="images/admin-raf.png" alt="Admin Raf Yönetimi" style="width:100%;max-width:1000px;" />
 </details>
 
 
